@@ -1,5 +1,5 @@
-import { Button, Box, others } from '@chakra-ui/react';
-import { useEffect, useMemo, useState } from 'react';
+import { Button, Box } from '@chakra-ui/react';
+import { useMemo } from 'react';
 import { useInfiniteQuery } from 'react-query';
 
 import { Header } from '../components/Header';
@@ -67,7 +67,7 @@ export default function Home(): JSX.Element {
       <Box maxW={1120} px={20} mx="auto" my={20}>
         <CardList cards={formattedData} />
         {hasNextPage && (
-          <Button onClick={() => fetchNextPage()} disabled={isFetchingNextPage} >
+          <Button onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
             {isFetchingNextPage ? 'Carregando...' : 'Carregar mais'}
           </Button>
         )}
